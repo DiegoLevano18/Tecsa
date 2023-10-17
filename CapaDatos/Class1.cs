@@ -8,5 +8,8 @@ namespace CapaDatos
 {
     public class Class1
     {
+
+        // Este es un comentario de una sola línea
+
     }
 }
