@@ -46,14 +46,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="FormVista_ModuloSistema.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FormVista_ModuloSistema.Designer.cs">
+      <DependentUpon>FormVista_ModuloSistema.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormNuevo_ModuloSistema.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNuevo_ModuloSistema.Designer.cs">
+      <DependentUpon>FormNuevo_ModuloSistema.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormVista_ModuloSistema.resx">
+      <DependentUpon>FormVista_ModuloSistema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNuevo_ModuloSistema.resx">
+      <DependentUpon>FormNuevo_ModuloSistema.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -75,6 +87,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CapaEntidad\CapaEntidad.csproj">
+      <Project>{76a2e8a6-ea74-48da-bb51-261338bdf83c}</Project>
+      <Name>CapaEntidad</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CapaNegocio\CapaNegocio.csproj">
+      <Project>{88567149-1125-46ed-ad09-25dde3bc4412}</Project>
+      <Name>CapaNegocio</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
