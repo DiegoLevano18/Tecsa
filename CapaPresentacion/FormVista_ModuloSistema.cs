@@ -31,6 +31,12 @@ namespace CapaPresentacion
             {
                 dgvModuloSistema.DataSource = negocio_ModuloSistema.Buscar_ModuloSistema(id);
             }
+            else if (string.IsNullOrWhiteSpace(txtBuscar.Text))
+            {
+
+                dgvModuloSistema.DataSource = negocio_ModuloSistema.Vista_ModuloSistema();
+
+            }
             else
             {
                 // Mostrar mensaje de error
@@ -45,8 +51,8 @@ namespace CapaPresentacion
         {
             FormNuevo_ModuloSistema FormEditar_ModuloSistema = new FormNuevo_ModuloSistema();
             FormEditar_ModuloSistema.Controls["btnGuardar"].Text = "Actualizar";
-            FormEditar_ModuloSistema.Controls["txtId"].Text =
-           dgvModuloSistema.Rows[e.RowIndex].Cells[0].Value.ToString();
+            /*FormEditar_ModuloSistema.Controls["txtId"].Text =
+           dgvModuloSistema.Rows[e.RowIndex].Cells[0].Value.ToString();*/
             FormEditar_ModuloSistema.Controls["txtNombre"].Text =
            dgvModuloSistema.Rows[e.RowIndex].Cells[1].Value.ToString();
             FormEditar_ModuloSistema.ShowDialog();
