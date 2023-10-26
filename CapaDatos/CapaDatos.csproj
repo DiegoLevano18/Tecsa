@@ -42,7 +42,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Datos_Accidente.cs" />
+    <Compile Include="Datos_Autobus.cs" />
+    <Compile Include="Datos_Conductor.cs" />
+    <Compile Include="Datos_DetalleCB.cs" />
+    <Compile Include="Datos_Empleados.cs" />
+    <Compile Include="Datos_LicenciaConducir.cs" />
     <Compile Include="Datos_ModuloSistema.cs" />
+    <Compile Include="Datos_Multa.cs" />
+    <Compile Include="Datos_Operaciones.cs" />
+    <Compile Include="Datos_Pasajero.cs" />
+    <Compile Include="Datos_Rol.cs" />
+    <Compile Include="Datos_RolOperaciones.cs" />
+    <Compile Include="Datos_Rutas.cs" />
+    <Compile Include="Datos_UserSistema.cs" />
+    <Compile Include="Datos_UserWebC.cs" />
+    <Compile Include="Datos_UserWebP.cs" />
+    <Compile Include="Datos_Viaje.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

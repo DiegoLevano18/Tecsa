@@ -41,7 +41,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entidad_Accidente.cs" />
+    <Compile Include="Entidad_Autobus.cs" />
+    <Compile Include="Entidad_Conductor.cs" />
+    <Compile Include="Entidad_DetalleCB.cs" />
+    <Compile Include="Entidad_Empleado.cs" />
+    <Compile Include="Entidad_LicenciaConducir.cs" />
     <Compile Include="Entidad_ModuloSistema.cs" />
+    <Compile Include="Entidad_Multa.cs" />
+    <Compile Include="Entidad_Operaciones.cs" />
+    <Compile Include="Entidad_Pasajero.cs" />
+    <Compile Include="Entidad_Queja.cs" />
+    <Compile Include="Entidad_Quejas.cs" />
+    <Compile Include="Entidad_Reclamos.cs" />
+    <Compile Include="Entidad_Rol.cs" />
+    <Compile Include="Entidad_RolOperaciones.cs" />
+    <Compile Include="Entidad_Rutas.cs" />
+    <Compile Include="Entidad_UserSistema.cs" />
+    <Compile Include="Entidad_UserWebC.cs" />
+    <Compile Include="Entidad_UserWebP.cs" />
+    <Compile Include="Entidad_Viaje.cs" />
+    <Compile Include="Entidad_Reclamo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

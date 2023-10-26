@@ -1,66 +1,69 @@
-﻿using System;
+﻿using CapaEntidad;
+using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data.SqlClient;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using System.Configuration;
-using CapaEntidad;
-
-using System.Data;
-using System.Data.SqlClient;
-
 namespace CapaDatos
 {
-    public class Datos_ModuloSistema
+    public class Datos_Pasajero
     {
         SqlConnection cn = new SqlConnection(
             ConfigurationManager.ConnectionStrings["cn"].ConnectionString);
-   
-        public DataTable Vista_ModuloSistema()
+
+        public DataTable Vista_Pasajero()
         {
-            SqlDataAdapter da = new SqlDataAdapter("sp_Ver_ModuloSistema", cn);
+            SqlDataAdapter da = new SqlDataAdapter("sp_Ver_Pasajero", cn);
             DataTable dt = new DataTable();
             da.Fill(dt);
             return dt;
         }
 
-        public string Crear_ModuloSistema(ModuloSistema oModuloSistema)
+        public string Crear_Pasajero(Pasajero oPasajero)
         {
-            
+
             // Abrir Conexión 
             cn.Open();
-           
+
             // Definir SP a Ejecutar: En este ejemplo es sp_CrearCliente
-            SqlCommand cmd = new SqlCommand("sp_Crear_ModuloSistema", cn);
+            SqlCommand cmd = new SqlCommand("sp_Crear_Pasajero", cn);
             cmd.CommandType = CommandType.StoredProcedure;
-            
+
             // Asignado valores a los parámetros de entrada
             // Los valores se obtendrán de un objeto de la Entidad Cliente
-            cmd.Parameters.AddWithValue("@nombre", oModuloSistema.Nombre);
-            
+            cmd.Parameters.AddWithValue("@nombre", oPasajero.Nombre);
+            cmd.Parameters.AddWithValue("@apellido", oPasajero.Apellido);
+            cmd.Parameters.AddWithValue("@edad", oPasajero.Edad);
+            cmd.Parameters.AddWithValue("@telefono", oPasajero.Telefono);
+            cmd.Parameters.AddWithValue("@correo", oPasajero.Correo);
+
+
             // Configurando el parámetro de entrada del sp_CrearCliente
             SqlParameter param = new SqlParameter("@resultado", SqlDbType.VarChar, 50);
             param.Direction = ParameterDirection.Output;
             cmd.Parameters.Add(param);
-            
+
             // Ejecutando el procedimiento almacenado
             cmd.ExecuteNonQuery();
-            
+
             // Cerrando la conexión
             cn.Close();
-            
+
             // El método NuevoCliente devolverá el valor del parámetro de salida de sp
             // @resultado en el parámetro de salida del sp_CrearCliente
             return cmd.Parameters["@resultado"].Value.ToString();
 
         }
 
-        public DataTable Buscar_ModuloSistema(int Id)
+        public DataTable Buscar_Pasajero(int Id)
         {
 
             cn.Open();
-            SqlCommand cmd = new SqlCommand("sp_Buscar_ModuloSistema", cn);
+            SqlCommand cmd = new SqlCommand("sp_Buscar_Pasajero", cn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@id", Id);
             cn.Close();
@@ -74,14 +77,18 @@ namespace CapaDatos
         }
 
 
-        public string Actualizar_ModuloSistema(ModuloSistema oModuloSistema)
+        public string Actualizar_Pasajero(Pasajero oPasajero)
         {
             cn.Open();
-            SqlCommand cmd = new SqlCommand("sp_Actualizar_ModuloSistema", cn);
+            SqlCommand cmd = new SqlCommand("sp_Actualizar_Pasajero", cn);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@id", oModuloSistema.Id);
-            cmd.Parameters.AddWithValue("@nombre", oModuloSistema.Nombre);
-            
+            cmd.Parameters.AddWithValue("@id", oPasajero.Id);
+            cmd.Parameters.AddWithValue("@nombre", oPasajero.Nombre);
+            cmd.Parameters.AddWithValue("@apellido", oPasajero.Apellido);
+            cmd.Parameters.AddWithValue("@edad", oPasajero.Edad);
+            cmd.Parameters.AddWithValue("@telefono", oPasajero.Telefono);
+            cmd.Parameters.AddWithValue("@correo", oPasajero.Correo);
+
             // El nombre del parámetro de salida del sp es @resultado
             SqlParameter param = new SqlParameter("@resultado", SqlDbType.VarChar, 50);
             param.Direction = ParameterDirection.Output;
@@ -94,10 +101,10 @@ namespace CapaDatos
             return cmd.Parameters["@resultado"].Value.ToString();
         }
 
-        public int Eliminar_ModuloSistema(int Id)
+        public int Eliminar_Pasajero(int Id)
         {
             cn.Open();
-            SqlCommand cmd = new SqlCommand("sp_Eliminar_ModuloSistema", cn);
+            SqlCommand cmd = new SqlCommand("sp_Eliminar_Pasajero", cn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@id", Id);
 

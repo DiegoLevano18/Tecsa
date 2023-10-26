@@ -41,8 +41,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Negocio_Accidente.cs" />
+    <Compile Include="Negocio_Autobus.cs" />
+    <Compile Include="Negocio_Conductor.cs" />
+    <Compile Include="Negocio_DetalleCB.cs" />
+    <Compile Include="Negocio_Empleados.cs" />
+    <Compile Include="Negocio_LicenciaConducir.cs" />
     <Compile Include="Negocio_ModuloSistema.cs" />
+    <Compile Include="Negocio_Multa.cs" />
+    <Compile Include="Negocio_Operaciones.cs" />
+    <Compile Include="Negocio_Pasajero.cs" />
+    <Compile Include="Negocio_Rol.cs" />
+    <Compile Include="Negocio_RolOperaciones.cs" />
+    <Compile Include="Negocio_Rutas.cs" />
+    <Compile Include="Negocio_UserSistema.cs" />
+    <Compile Include="Negocio_UserWebC.cs" />
+    <Compile Include="Negocio_Viaje.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserWebP.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CapaDatos\CapaDatos.csproj">
